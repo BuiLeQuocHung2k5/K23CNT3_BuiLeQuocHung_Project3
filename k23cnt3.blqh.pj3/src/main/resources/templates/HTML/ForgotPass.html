@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Tiệm hoa Nhà Làm - Quên mật khẩu</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" th:href="@{/CSS/StyleOfLogin&Register.css}">
+</head>
+<body>
+
+<div class="form-container">
+    <a class="logo" th:href="@{/HomePage}">
+        <img th:src="@{/Images/Logo.jpg}" alt="Logo" class="logo-img">
+    </a>
+
+    <a th:href="@{/HomePage}" class="back-home-btn">← Trang chủ</a>
+
+    <h2>Quên mật khẩu</h2>
+    <p>Chúng tôi sẽ hỗ trợ bạn tìm lại tài khoản!</p>
+
+    <form>
+        <input type="text" placeholder="Tên hiển thị" required>
+        <input type="email" placeholder="Email" required>
+        <input type="text" placeholder="Mã OTP gửi qua email" required>
+        <input type="password" placeholder="Mật khẩu mới" required>
+        <input type="password" placeholder="Xác nhận mật khẩu mới" required>
+
+        <button type="submit">Đổi mật khẩu</button>
+    </form>
+
+    <div class="switch-link">
+        <p>Chưa có tài khoản?
+            <a th:href="@{/Register}">Đăng ký</a>
+        </p>
+        <p>Đã nhớ mật khẩu?
+            <a th:href="@{/Rogin}">Đăng nhập</a>
+        </p>
+    </div>
+</div>
+
+</body>
+</html>

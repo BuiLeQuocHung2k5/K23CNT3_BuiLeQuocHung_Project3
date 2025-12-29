@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Admin - Quản lý sản phẩm</title>
+
+    <link rel="stylesheet" th:href="@{/CSS/StyleOfAdminProduct.css}">
+</head>
+
+<body>
+<div class="app">
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar">
+        <div class="brand">
+            <img th:src="@{/Images/Logo.png}" class="logo-img" alt="Logo">
+            <h2>Hoa Nhà Làm</h2>
+        </div>
+
+        <nav class="admin-nav">
+            <a th:href="@{/Admin}">Dashboard</a>
+            <a th:href="@{/AdminCategory}">Quản lí danh mục</a>
+            <a th:href="@{/AdminProduct}"class="active">Quản lí sản phẩm</a>
+            <a th:href="@{/AdminAddProduct}" >Thêm sản phẩm</a>
+            <a th:href="@{/AdminOrders}">Quản lí đơn hàng</a>
+            <a th:href="@{/AdminAccount}">Quản lí tài khoản</a>
+            <a th:href="@{/AdminContact}">Liên hệ</a>
+        </nav>
+
+        <div class="side-footer muted">
+            Admin • Bạn đang đăng nhập với quyền Quản trị
+        </div>
+    </aside>
+
+    <!-- MAIN -->
+    <section class="main">
+        <div class="page-title">
+            <h1>Quản lý sản phẩm</h1>
+        </div>
+
+        <div class="content">
+            <div class="left">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>SẢN PHẨM HOA</th>
+                        <th>DANH MỤC</th>
+                        <th>GIÁ</th>
+                        <th>KHO</th>
+                        <th>NGUỒN / NHÀ LÀM</th>
+                        <th>TRẠNG THÁI</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr>
+                        <td>
+                            <div class="prod-info">
+                                <img th:src="@{/Images/HoaSinhNhat/HN01.jpg}" class="thumb" alt="Hoa sinh nhật HN01">
+                                <div>
+                                    <div class="fw">Hoa sinh nhật HN01</div>
+                                    <div class="muted">Mã: HN01</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Hoa sinh nhật</td>
+                        <td>650,000</td>
+                        <td>50</td>
+                        <td>Hoa Nhà Làm</td>
+                        <td><span class="stock-high">Nhiều</span></td>
+                        <td class="text-right">
+                            <button class="btn ghost">Sửa</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="prod-info">
+                                <img th:src="@{/Images/HoaCuoi/HC03.jpg}" class="thumb" alt="Hoa cưới HC03">
+                                <div>
+                                    <div class="fw">Hoa cưới HC03</div>
+                                    <div class="muted">Mã: HC03</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Hoa cưới</td>
+                        <td>1,200,000</td>
+                        <td>12</td>
+                        <td>Hoa Nhà Làm</td>
+                        <td><span class="stock-low">Ít</span></td>
+                        <td class="text-right">
+                            <button class="btn ghost">Sửa</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="prod-info">
+                                <img th:src="@{/Images/HoaChiaBuon/HB02.jpg}" class="thumb" alt="Hoa chia buồn HB02">
+                                <div>
+                                    <div class="fw">Hoa chia buồn HB02</div>
+                                    <div class="muted">Mã: HB02</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Hoa chia buồn</td>
+                        <td>480,000</td>
+                        <td>0</td>
+                        <td>Hoa Nhà Làm</td>
+                        <td><span class="stock-out">Hết</span></td>
+                        <td class="text-right">
+                            <button class="btn ghost">Sửa</button>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+</div>
+</body>
+</html>

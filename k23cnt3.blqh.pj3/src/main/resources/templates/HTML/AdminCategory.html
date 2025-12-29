@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Admin - Quản lý danh mục</title>
+
+    <link rel="stylesheet" th:href="@{/CSS/StyleOfAdminCategory.css}">
+</head>
+
+<body>
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar">
+        <div class="brand">
+            <img th:src="@{/Images/Logo.png}" class="logo-img" alt="Logo">
+            <h2>Hoa Nhà Làm</h2>
+        </div>
+
+        <nav class="admin-nav">
+            <a th:href="@{/Admin}">Dashboard</a>
+            <a th:href="@{/AdminCategory}"class="active">Quản lí danh mục</a>
+            <a th:href="@{/AdminProduct}">Quản lí sản phẩm</a>
+            <a th:href="@{/AdminAddProduct}">Thêm sản phẩm</a>
+            <a th:href="@{/AdminOrders}">Quản lí đơn hàng</a>
+            <a th:href="@{/AdminAccount}">Quản lí tài khoản</a>
+            <a th:href="@{/AdminContact}">Liên hệ</a>
+        </nav>
+
+        <div class="side-footer muted">
+            Admin • Bạn đang đăng nhập với quyền Quản trị
+        </div>
+    </aside>
+
+    <!-- MAIN -->
+    <section class="main">
+
+        <div class="page-title">
+            <h1>Quản lý danh mục hoa</h1>
+        </div>
+
+        <div class="content">
+
+            <!-- DANH SÁCH DANH MỤC -->
+            <div class="left">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>TÊN DANH MỤC</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <!-- Dùng Thymeleaf render danh sách -->
+                    <tr th:each="cat : ${categories}">
+                        <td th:text="${cat.id}">1</td>
+                        <td th:text="${cat.name}">Hoa Cưới</td>
+                        <td class="actions">
+                            <a th:href="@{/admin/categories/edit/{id}(id=${cat.id})}"
+                               class="btn ghost">Sửa</a>
+
+                            <a th:href="@{/admin/categories/delete/{id}(id=${cat.id})}"
+                               class="btn ghost"
+                               onclick="return confirm('Bạn có chắc muốn xóa danh mục này?')">
+                                Xóa
+                            </a>
+                        </td>
+                    </tr>
+                    </tbody>
+
+                </table>
+            </div>
+
+            <!-- THÊM DANH MỤC -->
+            <aside class="right">
+                <h3>Thêm danh mục hoa</h3>
+
+                <form th:action="@{/admin/categories/save}" method="post">
+                    <div class="form-row">
+                        <input type="text"
+                               name="name"
+                               placeholder="Tên danh mục (VD: Hoa Sinh Nhật)"
+                               required>
+                    </div>
+
+                    <div class="form-actions">
+                        <button class="btn" type="submit">Lưu</button>
+                    </div>
+                </form>
+            </aside>
+
+        </div>
+
+    </section>
+
+</div>
+</body>
+</html>
+

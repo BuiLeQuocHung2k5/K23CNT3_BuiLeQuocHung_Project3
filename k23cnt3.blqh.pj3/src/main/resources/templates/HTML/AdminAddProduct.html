@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Thêm sản phẩm</title>
+
+    <link rel="stylesheet" th:href="@{/CSS/StyleOfAdminAddProduct.css}">
+</head>
+
+<body>
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar">
+        <div class="brand">
+            <img th:src="@{/Images/Logo.png}" class="logo-img" alt="Logo">
+            <h2>Hoa Nhà Làm</h2>
+        </div>
+
+        <nav class="admin-nav">
+            <a th:href="@{/Admin}">Dashboard</a>
+            <a th:href="@{/AdminCategory}">Quản lí danh mục</a>
+            <a th:href="@{/AdminProduct}">Quản lí sản phẩm</a>
+            <a th:href="@{/AdminAddProduct}" class="active">Thêm sản phẩm</a>
+            <a th:href="@{/AdminOrders}">Quản lí đơn hàng</a>
+            <a th:href="@{/AdminAccount}">Quản lí tài khoản</a>
+            <a th:href="@{/AdminContact}">Liên hệ</a>
+        </nav>
+
+        <div class="side-footer muted">
+            Admin • Bạn đang đăng nhập với quyền Quản trị
+        </div>
+    </aside>
+
+    <!-- MAIN -->
+    <div class="container">
+        <h1 class="page-title">Thêm sản phẩm mới</h1>
+
+        <form class="add-form"
+              th:action="@{/admin/products/save}"
+              method="post"
+              enctype="multipart/form-data">
+
+            <!-- Ảnh sản phẩm -->
+            <div class="form-group full">
+                <label>Hình ảnh sản phẩm</label>
+                <input type="file" name="images" multiple>
+                <p class="note">* Có thể chọn nhiều ảnh</p>
+            </div>
+
+            <!-- Tên sản phẩm -->
+            <div class="form-group">
+                <label>Tên sản phẩm</label>
+                <input type="text"
+                       name="name"
+                       placeholder="Nhập tên hoa (VD: Hoa hồng đỏ)"
+                       required>
+            </div>
+
+            <!-- Giá -->
+            <div class="form-group">
+                <label>Giá (VNĐ)</label>
+                <input type="number"
+                       name="price"
+                       placeholder="Nhập giá"
+                       required>
+            </div>
+
+            <!-- Số lượng -->
+            <div class="form-group">
+                <label>Số lượng</label>
+                <input type="number"
+                       name="quantity"
+                       placeholder="Nhập số lượng"
+                       required>
+            </div>
+
+            <!-- Loại hoa -->
+            <div class="form-group">
+                <label>Danh mục hoa</label>
+                <select name="categoryId" required>
+                    <option value="">-- Chọn danh mục --</option>
+                    <option value="1">Hoa Cưới</option>
+                    <option value="2">Hoa Sinh Nhật</option>
+                    <option value="3">Hoa Chúc Mừng</option>
+                    <option value="4">Hoa Chia Buồn</option>
+                    <option value="5">Hoa Tươi Hằng Ngày</option>
+                </select>
+            </div>
+
+            <!-- Mô tả -->
+            <div class="form-group full">
+                <label>Mô tả sản phẩm</label>
+                <textarea name="description"
+                          rows="5"
+                          placeholder="Nhập mô tả chi tiết cho hoa..."></textarea>
+            </div>
+
+            <!-- Thuộc tính mở rộng (JS xử lý sau) -->
+            <div id="attributes" class="add-form"></div>
+
+            <!-- Submit -->
+            <button class="submit-btn" type="submit">
+                Lưu sản phẩm
+            </button>
+
+        </form>
+    </div>
+
+</div>
+
+<script th:src="@{/JavaScript/AdminAddProduct.js}"></script>
+</body>
+</html>

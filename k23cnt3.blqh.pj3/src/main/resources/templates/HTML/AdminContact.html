@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Hoa Nhà Làm - Trang liên hệ</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" th:href="@{/CSS/StyleOfAdminContact.css}">
+</head>
+
+<body>
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar">
+        <div class="brand">
+            <img th:src="@{/Images/Logo.png}" class="logo-img" alt="Logo">
+            <h2>Hoa Nhà Làm</h2>
+        </div>
+
+        <nav class="admin-nav">
+            <a th:href="@{/Admin}">Dashboard</a>
+            <a th:href="@{/AdminCategory}">Quản lí danh mục</a>
+            <a th:href="@{/AdminProduct}">Quản lí sản phẩm</a>
+            <a th:href="@{/AdminAddProduct}">Thêm sản phẩm</a>
+            <a th:href="@{/AdminOrders}">Quản lí đơn hàng</a>
+            <a th:href="@{/AdminAccount}">Quản lí tài khoản</a>
+            <a th:href="@{/AdminContact}"class="active">Liên hệ</a>
+        </nav>
+
+        <div class="side-footer muted">
+            Admin • Bạn đang đăng nhập với quyền Quản trị
+        </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="layout">
+
+        <!-- DANH SÁCH ĐÁNH GIÁ / LIÊN HỆ -->
+        <aside class="review-pane" aria-labelledby="reviewTitle">
+            <div class="pane-head">
+                <h2 id="reviewTitle">Đánh giá & liên hệ khách hàng</h2>
+
+                <input class="search"
+                       placeholder="Tìm theo tên / điện thoại / sản phẩm hoa..."/>
+            </div>
+
+            <div class="review-list">
+
+                <!-- ITEM -->
+                <article class="review-item active">
+                    <img class="r-avt" th:src="@{/Images/Contact/avatar.jpg}" alt="Lê Thị Anh Thư"/>
+                    <div>
+                        <div class="r-head">
+                            <div class="r-name">Lê Thị Anh Thư</div>
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+
+                        <div class="r-prod">
+                            <strong>Bó hoa sinh nhật HN01</strong>
+                        </div>
+
+                        <div class="r-body">
+                            Hoa rất tươi, gói đẹp, giao đúng giờ.
+                        </div>
+
+                        <div class="r-phone">0987 654 321</div>
+
+                        <div class="r-photos">
+                            <img th:src="@{/Images/Contact/Review.jpg}">
+                            <img th:src="@{/Images/Contact/Review2.jpg}">
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ITEM -->
+                <article class="review-item">
+                    <img class="r-avt" th:src="@{/Images/Contact/avatar.jpg}" alt="Lee Min Ho"/>
+                    <div>
+                        <div class="r-head">
+                            <div class="r-name">Lee Min Ho</div>
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                        </div>
+
+                        <div class="r-prod">
+                            <strong>Hoa cưới HC03</strong>
+                        </div>
+
+                        <div class="r-body">
+                            Hoa đẹp nhưng giao hơi trễ.
+                        </div>
+
+                        <div class="r-phone">0912 345 678</div>
+
+                        <div class="r-photos">
+                            <img th:src="@{/Images/Contact/Review2.jpg}">
+                            <img th:src="@{/Images/Contact/Review.jpg}">
+                        </div>
+                    </div>
+                </article>
+
+                <!-- ITEM -->
+                <article class="review-item">
+                    <img class="r-avt" th:src="@{/Images/Contact/avatar.jpg}" alt="Bùi Công Nam"/>
+                    <div>
+                        <div class="r-head">
+                            <div class="r-name">Bùi Công Nam</div>
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                        </div>
+
+                        <div class="r-prod">
+                            <strong>Hoa chia buồn HB02</strong>
+                        </div>
+
+                        <div class="r-body">
+                            Hoa không giống hình mẫu.
+                        </div>
+
+                        <div class="r-phone">0903 111 222</div>
+
+                        <div class="r-photos">
+                            <img th:src="@{/Images/Contact/Review.jpg}">
+                            <img th:src="@{/Images/Contact/Review2.jpg}">
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </aside>
+
+        <!-- KHUNG CHAT -->
+        <section class="chat-pane" aria-labelledby="chatTitle">
+
+            <header class="chat-head">
+                <div class="user-avatar"
+                     th:style="'background-image:url(' + @{/Images/Contact/avatar.jpg} + ')'">
+                </div>
+
+                <div class="user-meta">
+                    <h2 id="chatTitle">Lê Thị Anh Thư</h2>
+                    <div class="muted">
+                        Bó hoa sinh nhật HN01 · 0987 654 321 · 5★
+                    </div>
+                </div>
+            </header>
+
+            <div class="chat-body">
+                <div class="row">
+                    <div>
+                        <div class="msg">
+                            Shop ơi còn mẫu hoa nào tone hồng nhạt không?
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div>
+                        <div class="msg">
+                            Ok mình chọn mẫu HN05 nhé
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <form class="chat-input" autocomplete="off">
+                <input type="text" placeholder="Nhập tin nhắn..."/>
+                <button class="btn" type="submit" title="Gửi">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </form>
+
+        </section>
+
+    </main>
+</div>
+</body>
+</html>
